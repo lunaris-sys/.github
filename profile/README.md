@@ -12,11 +12,11 @@ The full architecture is a published technical report:
 
 It covers the whole stack: the eBPF event pipeline, the knowledge graph, the AI layer, the Wayland compositor, the shell, the capability-based permission model, the security threat model, and the roadmap. It is the ground truth for design decisions.
 
-## Where the code lives
+## Structure
 
 Most of the first-party code is one monorepo, [`arlen`](https://github.com/arlenos/arlen), because the layers are tightly coupled and change together. A couple of things keep their own repos where independence matters: the [`compositor`](https://github.com/arlenos/compositor) (a fork of [cosmic-comp](https://github.com/pop-os/cosmic-comp) that tracks upstream) and the [`foundation`](https://github.com/arlenos/foundation) paper. The monorepo is laid out as `contracts/` (shared wire crates), `daemons/`, `ai/`, `sdk/`, `apps/`, `forage/`, `themes/`, and `distro/`, with architecture specs under `docs/`.
 
-## The stack, bottom to top
+## Stack
 
 A kernel layer normalises eBPF tracepoints into events. An event bus routes those events between components over Unix sockets. The knowledge daemon writes them into a graph (SQLite on the write side, a graph engine for queries) and adds the project and timeline features on top. The SDK gives first-party apps typed access to the graph, the bus, configuration, permissions, and theming.
 
