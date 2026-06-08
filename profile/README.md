@@ -1,6 +1,6 @@
 # Arlen
 
-A capability-based, event-driven Linux desktop, built from scratch. It is in early development (pre-alpha), so things move and break often.
+A capability-based, event-driven Linux desktop, built from scratch on top of Debian. It is in early development (pre-alpha), so things move and break often.
 
 The system is organised around three ideas. A system-wide knowledge graph that the whole desktop reads and writes, treated as real infrastructure rather than a per-app database, so the system has context: which files belong to a project, what you worked on last week, which applications talk to each other. Capability tokens for every cross-component access, so a component only ever reaches what it was granted. And a modern shell that replaces the usual Linux desktop pieces, meant to be usable by non-technical people, with no telemetry and no lock-in.
 
